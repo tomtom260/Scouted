@@ -1,42 +1,39 @@
-import React from "react"
 import Button from "./Button"
-import { action, actions } from "@storybook/addon-actions"
 
 const defaultExport = {
-  title: "Form/Button",
+  title: "Button",
   component: Button,
   args: {
     children: "Button",
-    variant: "primary",
   },
   argTypes: {
-    variant: { control: "color" },
-    // onClick: { action: "onClick" },
-    // onMouseOver: { action: "onMouseOver" },
-    // onMouseLeave: { action: "onMouseLeave" },
+    children: { type: "string" },
+    size: { type: "string" },
+    variant: { type: "string" },
   },
 }
 
-const Template = args => (
-  <Button onClick={() => console.log("hello")} {...args} />
-)
+const Template = args => <Button {...args} />
 
-export const Primary = Template.bind({})
-Primary.args = {
-  variant: "primary",
-  children: "Primary Button",
+export const Small = Template.bind({})
+Small.args = {
+  children: "Small",
+  size: "small",
 }
-export const Secondary = Template.bind({})
-Secondary.args = {
-  variant: "secondary",
+export const Medium = Template.bind({})
+Medium.args = {
+  children: "Medium",
 }
-export const Success = Template.bind({})
-Success.args = {
-  variant: "success",
+export const Large = Template.bind({})
+Large.args = {
+  children: "Large",
+  size: "large",
 }
-export const Danger = Template.bind({})
-Danger.args = {
-  variant: "danger",
+
+export const Text = Template.bind({})
+Text.args = {
+  variant: "text",
+  children: "text",
 }
 
 export default defaultExport

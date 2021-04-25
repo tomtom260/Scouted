@@ -1,41 +1,28 @@
 import React from "react"
-import styled from "styled-components"
+import ButtonMui from "@material-ui/core/Button"
+import { makeStyles } from "@material-ui/core/styles"
 
-const StyledButton = styled.button`
-  border: none;
-  color: ${({ color }) => color};
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  border-radius: 40px;
-  cursor: pointer;
-  background-color: ${({ bgColor }) => bgColor};
-`
+const useStyles = makeStyles(theme => ({
+  primaryButton: props => {
+    return {
+      textTransform: "capitalize",
+      borderRadius: "2.5rem",
+      letterSpacing: "1px",
+      padding: "0.5rem 2rem",
+    }
+  },
+}))
 
-function Button({ variant = "primary", children, ...rest }) {
-  let bgColor
-  const color = variant === "secondary" ? "#000000" : "#FFFFFF"
-  switch (variant) {
-    default:
-    case "primary":
-      bgColor = "#008CBA"
-      break
-    case "secondary":
-      bgColor = "#e7e7e7"
-      break
-    case "success":
-      bgColor = "#4CAF50"
-      break
-    case "danger":
-      bgColor = "#f44336"
-  }
-  return (
-    <StyledButton color={color} bgColor={bgColor} {...rest}>
-      {children}
-    </StyledButton>
-  )
+function Button(props) {
+  const classes = useStyles()
+  return <ButtonMui className={classes.primaryButton} {...props} />
+}
+
+Button.defaultProps = {
+  color: "secondary",
+  variant: "contained",
+  size: "medium",
+  disableRipple: true,
 }
 
 export default Button
