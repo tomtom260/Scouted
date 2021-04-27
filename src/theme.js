@@ -23,16 +23,23 @@ const theme = createMuiTheme({
       letterSpacing: "1px",
       padding: "0.9rem 2rem",
     },
+    grid: {
+      marginTop: "8rem",
+      paddingLeft: "1rem",
+    },
     h1: {
       fontFamily: "Roboto,Helvetica,sans-serif",
       textTransform: "capitalize",
       fontWeight: 700,
       fontSize: "3.6rem",
       "@media (min-width:960px)": {
-        fontSize: "8.8rem",
+        fontSize: "8rem",
       },
     },
-    body1: {},
+    body2: {
+      textTransform: "capitalize",
+      fontWeight: "bold",
+    },
   },
 })
 

@@ -2,7 +2,6 @@ import React from "react"
 import Grid from "@material-ui/core/Grid"
 import { Typography } from "@material-ui/core"
 import Button from "../Button/Button"
-import Header from "../Header/Header"
 
 function Hero() {
   return (
@@ -14,9 +13,6 @@ function Hero() {
       justify="flex-end"
       xs={12}
     >
-      <Grid item />
-      <Grid item />
-      <Grid item />
       <Grid item>
         <Typography variant="h1">dont get hired.</Typography>
         <Typography variant="h1">get scouted.</Typography>
