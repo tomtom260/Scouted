@@ -3,19 +3,24 @@ import ButtonMui from "@material-ui/core/Button"
 import { makeStyles } from "@material-ui/core/styles"
 
 const useStyles = makeStyles(theme => ({
-  primaryButton: props => {
-    return {
-      textTransform: "capitalize",
-      borderRadius: "2.5rem",
-      letterSpacing: "1px",
-      padding: "0.5rem 2rem",
-    }
+  getStarted: {
+    ...theme.typography.button,
+    [theme.breakpoints.up("md")]: {
+      display: "block",
+    },
+    display: "none",
   },
 }))
 
 function Button(props) {
   const classes = useStyles()
-  return <ButtonMui className={classes.primaryButton} {...props} />
+  console.log(props)
+  return (
+    <ButtonMui
+      className={props.getStarted ? classes.getStarted : null}
+      {...props}
+    />
+  )
 }
 
 Button.defaultProps = {
