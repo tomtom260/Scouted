@@ -36,6 +36,15 @@ const theme = createMuiTheme({
         fontSize: "8rem",
       },
     },
+    h2: {
+      fontFamily: "Roboto,Helvetica,sans-serif",
+      textTransform: "capitalize",
+      fontWeight: 700,
+      fontSize: "3.6rem",
+      "@media (min-width:960px)": {
+        fontSize: "5.6rem",
+      },
+    },
     body2: {
       textTransform: "capitalize",
       fontWeight: "bold",

@@ -8,6 +8,7 @@ import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown"
 import MenuIcon from "@material-ui/icons/Menu"
 import IconButton from "@material-ui/core/IconButton"
 import Grid from "@material-ui/core/Grid"
+import { Link, NavLink } from "react-router-dom"
 
 const useStyles = makeStyles(theme => {
   return {
@@ -54,8 +55,23 @@ function Header({ scrolled }) {
                 <img src={logo} alt="" />
               </div>
               <nav className={classes.navigation}>
-                <Button variant="text">Candidates</Button>
-                <Button variant="text">Companies</Button>
+                <Button
+                  variant="text"
+                  to="/"
+                  exact
+                  activeStyle={{ color: "red" }}
+                  component={NavLink}
+                >
+                  Candidates
+                </Button>
+                <Button
+                  variant="text"
+                  to="/companies"
+                  activeStyle={{ color: "red" }}
+                  component={NavLink}
+                >
+                  Companies
+                </Button>
                 <Button endIcon={<ArrowDropDownIcon />} variant="text">
                   About Us
                 </Button>
