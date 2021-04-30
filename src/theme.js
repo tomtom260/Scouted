@@ -24,7 +24,7 @@ const theme = createMuiTheme({
       padding: "0.9rem 2rem",
     },
     grid: {
-      marginTop: "8rem",
+      marginBottom: "8rem",
       paddingLeft: "1rem",
     },
     h1: {

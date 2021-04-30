@@ -11,10 +11,25 @@ import Grid from "@material-ui/core/Grid"
 import { Link, NavLink } from "react-router-dom"
 
 const useStyles = makeStyles(theme => {
+  console.log(window.innerWidth)
   return {
-    logoContainer: {},
+    header: {
+      minHeight: "4.7rem",
+      [theme.breakpoints.up("md")]: {
+        minHeight: "7.2rem",
+      },
+      margin: "0 auto",
+      padding: "0 2.4rem",
+      flexWrap: "nowrap",
+    },
+    activeStyle: {
+      color: `${theme.palette.secondary.main}`,
+    },
     toolbar: {
       justifyContent: "space-between",
+      textAlign: "center",
+      padding: 0,
+      minHeight: 0,
     },
     navigation: {
       display: "none",
@@ -36,72 +51,67 @@ function Header({ scrolled }) {
   const classes = useStyles()
   return (
     <>
-      <AppBar elevation={0} position="static">
+      <AppBar elevation={1} position="fixed">
         <Toolbar className={classes.toolbar}>
-          <Grid container="row">
-            <Grid item xs={0} lg={1} xl={3} />
-            <Grid
-              xs={12}
-              md={10}
-              lg={8}
-              xl={6}
-              item
-              container
-              direction="row"
-              alignItems="center"
-              justify="space-between"
-            >
-              <div className={classes.logoContainer}>
-                <img src={logo} alt="" />
-              </div>
-              <nav className={classes.navigation}>
-                <Button
-                  variant="text"
-                  to="/"
-                  exact
-                  activeStyle={{ color: "red" }}
-                  component={NavLink}
-                >
-                  Candidates
-                </Button>
-                <Button
-                  variant="text"
-                  to="/companies"
-                  activeStyle={{ color: "red" }}
-                  component={NavLink}
-                >
-                  Companies
-                </Button>
-                <Button endIcon={<ArrowDropDownIcon />} variant="text">
-                  About Us
-                </Button>
-                <Button variant="text">Advice</Button>
-              </nav>
-              <div>
-                <IconButton className={classes.menu}>
-                  <MenuIcon />
-                </IconButton>
-                {scrolled ? (
-                  <>
-                    <Button
-                      elevation={0}
-                      getStarted
-                      classname={classes.getStarted}
-                    >
-                      get started
-                    </Button>
-                  </>
-                ) : (
-                  <div className={classes.navigation}>
-                    <Button variant="text">log in</Button>
-                    <Button variant="text">sign in</Button>
-                  </div>
-                )}
-              </div>
-            </Grid>
+          <Grid
+            xs={12}
+            md={10}
+            xl={6}
+            container
+            direction="row"
+            alignItems="center"
+            justify="space-between"
+            className={classes.header}
+          >
+            <div className={classes.logoContainer}>
+              <img src={logo} alt="" />
+            </div>
+            <nav className={classes.navigation}>
+              <Button
+                variant="text"
+                to="/"
+                exact
+                color="#000"
+                activeClassName={classes.activeStyle}
+                component={NavLink}
+              >
+                Candidates
+              </Button>
+              <Button
+                variant="text"
+                to="/companies"
+                color="#000"
+                activeClassName={classes.activeStyle}
+                component={NavLink}
+              >
+                Companies
+              </Button>
+            </nav>
+            <div>
+              <IconButton className={classes.menu}>
+                <MenuIcon />
+              </IconButton>
+              {scrolled ? (
+                <>
+                  <Button
+                    elevation={0}
+                    getStarted
+                    classname={classes.getStarted}
+                  >
+                    get started
+                  </Button>
+                </>
+              ) : (
+                <div className={classes.navigation}>
+                  <Button variant="text">log in</Button>
+                  <Button variant="text">sign in</Button>
+                </div>
+              )}
+            </div>
           </Grid>
         </Toolbar>
       </AppBar>
+      <div className={classes.header} />
     </>
   )
 }

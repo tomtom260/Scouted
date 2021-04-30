@@ -10,6 +10,11 @@ const useStyles = makeStyles(theme => ({
     },
     display: "none",
   },
+  text: {
+    "&:hover": {
+      backgroundColor: "transparent",
+    },
+  },
 }))
 
 function Button(props) {
@@ -17,6 +22,7 @@ function Button(props) {
   console.log(props)
   return (
     <ButtonMui
+      classes={{ text: classes.text }}
       className={props.getStarted ? classes.getStarted : null}
       {...props}
     />
