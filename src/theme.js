@@ -17,6 +17,28 @@ const theme = createMuiTheme({
     fontWeightRegular: 400,
     fontWeightMedium: 500,
     fontWeightBold: 700,
+    sectionContainer: {
+      padding: "0 1.5rem",
+      margin: 0,
+      width: "100%",
+      transform: "translateY(4rem)",
+      "& div": {
+        padding: "0 2rem",
+      },
+      "@media (min-width:960px)": {
+        margin: "0 1.5rem",
+      },
+      "@media (min-width:1280px)": {
+        margin: "0 auto",
+        maxWidth: "70rem",
+        transform: "translateY(9rem)",
+      },
+    },
+    gridSpacing: {
+      "& .MuiGrid-item": {
+        padding: "2rem 0",
+      },
+    },
     button: {
       textTransform: "capitalize",
       borderRadius: "2.5rem",
@@ -25,7 +47,6 @@ const theme = createMuiTheme({
     },
     grid: {
       marginBottom: "8rem",
-      paddingLeft: "1rem",
     },
     h1: {
       fontFamily: "Roboto,Helvetica,sans-serif",

@@ -1,21 +1,25 @@
 import React from "react"
 import Grid from "@material-ui/core/Grid"
 import { makeStyles, Typography } from "@material-ui/core"
-import Button from "../Button/Button"
+import Button from "./Button/Button"
 
 const useStyles = makeStyles(theme => ({
   sectionContainer: {
-    ...theme.typography.sectionContainer,
-  },
-  gridSpacing: {
-    ...theme.typography.gridSpacing,
-  },
-  CTA: {
-    ...theme.typography.button,
+    transform: "translateY(9rem)",
+    padding: "0 1.5rem",
+    margin: 0,
+    width: "100%",
+    [theme.breakpoints.up("md")]: {
+      margin: "0 1.5rem",
+    },
+    [theme.breakpoints.up("lg")]: {
+      margin: "0 auto",
+      maxWidth: "70rem",
+    },
   },
 }))
 
-function Hero() {
+function Section() {
   const classes = useStyles()
   return (
     <Grid
@@ -25,7 +29,6 @@ function Hero() {
       direction="column"
       justify="flex-end"
       xs={12}
-      classes={{ "spacing-xs-5": classes.gridSpacing }}
       className={classes.sectionContainer}
     >
       <Grid item>
@@ -42,7 +45,7 @@ function Hero() {
         </Typography>
       </Grid>
       <Grid item>
-        <Button className={classes.CTA} size="large">
+        <Button getStarted size="large">
           Get Started
         </Button>
       </Grid>
@@ -50,4 +53,4 @@ function Hero() {
   )
 }
 
-export default Hero
+export default Section

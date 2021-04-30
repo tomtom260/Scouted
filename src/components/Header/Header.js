@@ -4,11 +4,10 @@ import Toolbar from "@material-ui/core/Toolbar"
 import { makeStyles } from "@material-ui/core/styles"
 import logo from "../../assets/scouted-logo.svg"
 import Button from "../Button/Button"
-import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown"
 import MenuIcon from "@material-ui/icons/Menu"
 import IconButton from "@material-ui/core/IconButton"
 import Grid from "@material-ui/core/Grid"
-import { Link, NavLink } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 
 const useStyles = makeStyles(theme => {
   console.log(window.innerWidth)
@@ -20,7 +19,6 @@ const useStyles = makeStyles(theme => {
       },
       margin: "0 auto",
       padding: "0 2.4rem",
-      flexWrap: "nowrap",
     },
     activeStyle: {
       color: `${theme.palette.secondary.main}`,
@@ -62,6 +60,7 @@ function Header({ scrolled }) {
             alignItems="center"
             justify="space-between"
             className={classes.header}
+            wrap="nowrap"
           >
             <div className={classes.logoContainer}>
               <img src={logo} alt="" />
