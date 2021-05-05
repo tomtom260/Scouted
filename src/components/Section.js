@@ -4,25 +4,13 @@ import { makeStyles, Typography } from "@material-ui/core"
 import Button from "./Button/Button"
 
 const useStyles = makeStyles(theme => ({
-  sectionContainer: {
-    transform: "translateY(9rem)",
-    padding: "0 1.5rem",
-    margin: 0,
-    width: "100%",
-    [theme.breakpoints.up("md")]: {
-      margin: "0 1.5rem",
-    },
-    [theme.breakpoints.up("lg")]: {
-      margin: "0 auto",
-      maxWidth: "70rem",
-    },
-  },
+  ,
 }))
 
 function Section() {
   const classes = useStyles()
   return (
-    <Grid
+    <div
       spacing={5}
       item
       container

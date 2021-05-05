@@ -10,15 +10,9 @@ import Grid from "@material-ui/core/Grid"
 import { NavLink } from "react-router-dom"
 
 const useStyles = makeStyles(theme => {
-  console.log(window.innerWidth)
   return {
     header: {
-      minHeight: "4.7rem",
-      [theme.breakpoints.up("md")]: {
-        minHeight: "7.2rem",
-      },
-      margin: "0 auto",
-      padding: "0 2.4rem",
+      ...theme.typography.header,
     },
     activeStyle: {
       color: `${theme.palette.secondary.main}`,

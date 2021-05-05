@@ -17,6 +17,17 @@ const theme = createMuiTheme({
     fontWeightRegular: 400,
     fontWeightMedium: 500,
     fontWeightBold: 700,
+    header: {
+      minHeight: "4.7rem",
+      "@media (min-width:960px)": {
+        minHeight: "7.2rem",
+      },
+      margin: "0 auto",
+      padding: "0 2.4rem",
+    },
+    footerColumn: {
+      width: "max-content",
+    },
     sectionContainer: {
       padding: "0 1.5rem",
       margin: 0,
@@ -53,8 +64,12 @@ const theme = createMuiTheme({
       textTransform: "capitalize",
       fontWeight: 700,
       fontSize: "3.6rem",
+      overflowWrap: "break-word",
       "@media (min-width:960px)": {
         fontSize: "8rem",
+      },
+      "@media(max-width:600)": {
+        width: "100%",
       },
     },
     h2: {
@@ -65,6 +80,9 @@ const theme = createMuiTheme({
       "@media (min-width:960px)": {
         fontSize: "5.6rem",
       },
+    },
+    body1: {
+      overflowWrap: "break-word",
     },
     body2: {
       textTransform: "capitalize",

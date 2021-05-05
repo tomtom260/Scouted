@@ -1,10 +1,29 @@
 import React from "react"
 import Grid from "@material-ui/core/Grid"
 import Typography from "@material-ui/core/Typography"
+import { makeStyles } from "@material-ui/core/styles"
+
+const useStyles = makeStyles(theme => ({
+  sectionContainer: {
+    ...theme.typography.sectionContainer,
+  },
+  gridSpacing: {
+    ...theme.typography.gridSpacing,
+  },
+  CTA: {
+    ...theme.typography.button,
+  },
+}))
 
 function HighTech() {
+  const classes = useStyles()
   return (
-    <Grid container direction="column" spacing={3}>
+    <Grid
+      className={classes.sectionContainer}
+      container
+      direction="column"
+      spacing={3}
+    >
       <Grid item>
         <Typography variant="h2">high text,human touch</Typography>
       </Grid>
