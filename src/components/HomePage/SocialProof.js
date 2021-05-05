@@ -8,14 +8,29 @@ import Logos from "../../assets/Logos2.png"
 const useStyles = makeStyles(theme => ({
   social: {
     ...theme.typography.header,
+    [theme.breakpoints.down("md")]: {
+      flexDirection: "column-reverse",
+      alignItems: "center",
+      textAlign: "center",
+    },
   },
   logosContainer: {
     "& img": {
       width: "55.5rem",
     },
+    [theme.breakpoints.down("md")]: {
+      marginBottom: "5rem",
+      "& img": {
+        width: "70%",
+      },
+    },
   },
   socialText: {
     width: "80%",
+    [theme.breakpoints.down("md")]: {
+      width: "70%",
+      margin: "0 auto",
+    },
   },
   socialCaption: {
     textAlign: "center",
@@ -54,8 +69,8 @@ function SocialProof() {
             </Typography>
           </Grid>
         </Grid>
-        <Grid item xs={12} lg={6}>
-          <span className={classes.logosContainer}>
+        <Grid className={classes.logosContainer} item xs={12} lg={6}>
+          <span>
             <img src={Logos} alt="logos" />
           </span>
           <Grid item className={classes.socialCaption}>
