@@ -1,3 +1,29 @@
 html {
   font-size: 62.5%;
+  /* font-family: "Karla, Helvetica, Arial, sans-serif"; */
+}
+
+@font-face {
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""),
+    url("./assets/fonts/Karla/static/Karla-Regular.ttf") format("ttf"),
+    url("./assets/fonts/Karla/Karla-VariableFont_wght.ttf") format("ttf");
+}
+
+/* @font-face {
+  font-family: "Platform";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""), url("./assets/fonts/Platform/Platform-Bold.ttf") format("ttf"),
+    url("./assets/fonts/Platform/Platform-Bold.woff2") format("woff2");
+} */
+@font-face {
+  font-family: "Platform";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""),
+    url("./assets/fonts/Platform/Platform-Regular.ttf") format("ttf"),
+    url("./assets/fonts/Platform/Platform-Regular.woff2") format("woff2");
 }

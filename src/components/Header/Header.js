@@ -13,6 +13,7 @@ const useStyles = makeStyles(theme => {
   return {
     header: {
       ...theme.typography.header,
+      maxWidth: "114rem",
     },
     activeStyle: {
       color: `${theme.palette.secondary.main}`,

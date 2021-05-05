@@ -21,8 +21,9 @@ const theme = createMuiTheme({
       minHeight: "4.7rem",
       "@media (min-width:960px)": {
         minHeight: "7.2rem",
+        margin: "0 auto",
       },
-      margin: "0 auto",
+      width: "100%",
       padding: "0 2.4rem",
     },
     footerColumn: {
@@ -60,7 +61,7 @@ const theme = createMuiTheme({
       marginBottom: "8rem",
     },
     h1: {
-      fontFamily: "Roboto,Helvetica,sans-serif",
+      fontFamily: "Platform,Helvetica,sans-serif",
       textTransform: "capitalize",
       fontWeight: 700,
       fontSize: "3.6rem",
@@ -73,7 +74,7 @@ const theme = createMuiTheme({
       },
     },
     h2: {
-      fontFamily: "Roboto,Helvetica,sans-serif",
+      fontFamily: "Platform,Helvetica,sans-serif",
       textTransform: "capitalize",
       fontWeight: 700,
       fontSize: "3.6rem",
@@ -81,6 +82,12 @@ const theme = createMuiTheme({
         fontSize: "5.6rem",
       },
     },
+    h3: {
+      fontFamily: "Platform,Helvetica,sans-serif",
+      textTransform: "capitalize",
+      fontSize: "3.2rem",
+    },
+
     body1: {
       overflowWrap: "break-word",
     },

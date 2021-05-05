@@ -15,16 +15,33 @@ import MailIcon from "@material-ui/icons/Mail"
 const useStyles = makeStyles(theme => ({
   footer: {
     ...theme.typography.header,
+    "& > div:not(:last-child)": {
+      marginRight: "9rem",
+    },
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: "column",
+      alignItems: "center",
+      textAlign: "center",
+      "& > div:not(:last-child)": {
+        marginRight: "0rem",
+        marginBottom: "4.8rem",
+      },
+    },
   },
   footerColumn: {
     ...theme.typography.footerColumn,
+    "& > div:not(:last-child)": {
+      marginBottom: "1.6rem",
+    },
   },
   footerContainer: {
     backgroundColor: "#363636",
     color: "#ffffff",
+    padding: "9.4rem 0 6rem 0",
   },
   iconContainer: {
-    borderRadius: "2rem",
+    padding: "0",
+    margin: "0 1rem",
     // backgroundColor: "white",
   },
   icon: {
@@ -52,16 +69,20 @@ function Footer() {
           item
         >
           <Grid item>
-            <Typography variant="h3">Get Started</Typography>
+            <Typography variant="h3">
+              Get
+              <br />
+              Started
+            </Typography>
           </Grid>
           <Grid item>
-            <Typography variant="body2">sign up</Typography>
+            <Typography variant="body1">sign up</Typography>
           </Grid>
           <Grid item>
-            <Typography variant="body2">candidates</Typography>
+            <Typography variant="body1">candidates</Typography>
           </Grid>
           <Grid item>
-            <Typography variant="body2">employer</Typography>
+            <Typography variant="body1">employer</Typography>
           </Grid>
         </Grid>
         <Grid
@@ -71,16 +92,20 @@ function Footer() {
           item
         >
           <Grid item>
-            <Typography variant="h3">Learn More</Typography>
+            <Typography variant="h3">
+              Learn
+              <br />
+              More
+            </Typography>
           </Grid>
           <Grid item>
-            <Typography variant="body2">About Us</Typography>
+            <Typography variant="body1">About Us</Typography>
           </Grid>
           <Grid item>
-            <Typography variant="body2">Blog</Typography>
+            <Typography variant="body1">Blog</Typography>
           </Grid>
           <Grid item>
-            <Typography variant="body2">FAQ</Typography>
+            <Typography variant="body1">FAQ</Typography>
           </Grid>
         </Grid>
         <Grid
@@ -93,10 +118,10 @@ function Footer() {
             <Typography variant="h3">Legal</Typography>
           </Grid>
           <Grid item>
-            <Typography variant="body2">Terms</Typography>
+            <Typography variant="body1">Terms</Typography>
           </Grid>
           <Grid item>
-            <Typography variant="body2">privacy</Typography>
+            <Typography variant="body1">privacy</Typography>
           </Grid>
         </Grid>
         <Grid
@@ -106,19 +131,15 @@ function Footer() {
           item
         >
           <Grid item>
-            <Typography variant="body2">
-              Scouted, a Recruiter.com Company
+            <Typography variant="body1">
+              Scouted, a Recruiter.com <br /> Company
             </Typography>
           </Grid>
         </Grid>
         <Grid className={classes.footerColumn} direction="row" container item>
           <Grid item>
             <IconButton className={classes.iconContainer}>
-              <FacebookIcon
-                color="primary"
-                className={classes.icon}
-                fontSize="large"
-              />
+              <FacebookIcon color="primary" fontSize="large" />
             </IconButton>
           </Grid>
           <Grid item>
