@@ -8,6 +8,9 @@ const theme = createMuiTheme({
     secondary: {
       main: "#6754c8",
     },
+    text: {
+      secondary: "#999999",
+    },
   },
   typography: {
     htmlFontSize: 10,
@@ -21,9 +24,9 @@ const theme = createMuiTheme({
       minHeight: "4.7rem",
       "@media (min-width:960px)": {
         minHeight: "7.2rem",
-        margin: "0 auto",
       },
-      width: "100%",
+      maxWidth: "114rem",
+      margin: "0 auto",
       padding: "0 2.4rem",
     },
     footerColumn: {

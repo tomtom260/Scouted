@@ -6,6 +6,7 @@ import Assesment from "./Assesment"
 import HighTech from "./HighTech"
 import Platform from "./Platform"
 import Message from "./Message"
+import SocialProof from "./SocialProof"
 
 const useStyles = makeStyles(theme => ({
   grid: {
@@ -21,7 +22,7 @@ function Home() {
     <>
       <Message />
       <Grid direction="row" container>
-        <Grid xs={12} md={10} lg={8} xl={6} item container direction="column">
+        <Grid xs={12} md={10} lg={10} xl={6} item container direction="column">
           <Grid className={classes.grid} item>
             <Hero />
           </Grid>
@@ -35,9 +36,12 @@ function Home() {
             <Grid item className={classes.grid}>
               <Platform />
             </Grid>
+            {/* <Grid item className={classes.grid}> */}
+            {/* </Grid> */}
           </div>
         </Grid>
       </Grid>
+      <SocialProof />
     </>
   )
 }
