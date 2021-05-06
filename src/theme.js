@@ -65,7 +65,6 @@ const theme = createMuiTheme({
     },
     h1: {
       fontFamily: "Platform,Helvetica,sans-serif",
-      textTransform: "capitalize",
       fontWeight: 700,
       fontSize: "3.6rem",
       overflowWrap: "break-word",

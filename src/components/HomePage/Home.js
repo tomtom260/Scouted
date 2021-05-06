@@ -7,6 +7,7 @@ import HighTech from "./HighTech"
 import Platform from "./Platform"
 import Message from "./Message"
 import SocialProof from "./SocialProof"
+import Carousel from "./Carousel"
 
 const useStyles = makeStyles(theme => ({
   grid: {
@@ -41,6 +42,7 @@ function Home() {
           </div>
         </Grid>
       </Grid>
+      <Carousel />
       <SocialProof />
     </>
   )
