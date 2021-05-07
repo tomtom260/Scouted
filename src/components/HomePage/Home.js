@@ -9,6 +9,7 @@ import Message from "./Message"
 import SocialProof from "./SocialProof"
 import Testimonies from "./Testimonies"
 import Introductions from "../Introductions/Introductions"
+import Resume from "./Resume"
 
 const useStyles = makeStyles(theme => ({
   grid: {
@@ -43,6 +44,7 @@ function Home() {
           </div>
         </Grid>
       </Grid>
+      <Resume />
       <Testimonies />
       <Introductions />
       <SocialProof />

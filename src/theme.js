@@ -91,14 +91,15 @@ const theme = createMuiTheme({
       fontFamily: "Platform,Helvetica,sans-serif",
       textTransform: "none",
       fontSize: "3.2rem",
+      fontWeight: 700,
     },
 
     body1: {
       overflowWrap: "break-word",
     },
     body2: {
-      textTransform: "capitalize",
-      fontWeight: "bold",
+      // textTransform: "capitalize",
+      fontWeight: "700",
     },
   },
 })
