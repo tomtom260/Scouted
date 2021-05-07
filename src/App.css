@@ -1,6 +1,9 @@
 html {
   font-size: 62.5%;
-  /* font-family: "Karla, Helvetica, Arial, sans-serif"; */
+}
+
+body {
+  text-transform: "none" !important;
 }
 
 @font-face {

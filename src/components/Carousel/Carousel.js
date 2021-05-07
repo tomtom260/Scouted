@@ -8,15 +8,16 @@ const useStyles = makeStyles(theme => ({
   sectionContainer: {
     ...theme.typography.header,
     maxWidth: "121.4rem",
-    padding: "8.6rem 0 7.6rem 0",
+    padding: "8.6rem 1.5rem 7.6rem 1.5rem",
   },
   radio: {
-    backgroundColor: "red",
+    backgroundColor: "#FFFFFF",
     width: "1.5rem",
     height: "1.5rem",
     margin: "1.5rem",
     borderRadius: "50%",
   },
+  radioActive: { backgroundColor: "#4727AE" },
   radioContainer: {
     padding: "3.6rem 0 4.8rem 0 !important",
   },
@@ -51,7 +52,6 @@ function Carousel({ children: items }) {
     }, 3000)
 
     return () => {
-      console.log("cleaning")
       clearInterval(interval.current)
     }
   }, [item.avatarName, items, autoSlide])
@@ -68,14 +68,19 @@ function Carousel({ children: items }) {
         <Typography variant="h1">{item.testimony}</Typography>
       </Grid>
       <Grid container item justify="center" className={classes.radioContainer}>
-        {items.map(el => (
+        {items.map((el, index) => (
           <Grid item>
             <Box
               onClick={() => {
                 setItem(el)
                 setAutoSlide(false)
               }}
-              className={classes.radio}
+              className={
+                items.findIndex(el2 => item.avatarName === el2.avatarName) ===
+                index
+                  ? `${classes.radio} ${classes.radioActive}`
+                  : `${classes.radio}`
+              }
             />
           </Grid>
         ))}
@@ -106,7 +111,9 @@ function Carousel({ children: items }) {
             <Typography variant="body1">{item.avatarName}</Typography>
           </Grid>
           <Grid item>
-            <Typography variant="body1">{item.avatarTitle}</Typography>
+            <Typography style={{ whiteSpace: "nowrap" }} variant="body1">
+              {item.avatarTitle}
+            </Typography>
           </Grid>
           <Grid item>
             <Typography variant="body1">{item.avatarCompany}</Typography>

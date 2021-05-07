@@ -10,6 +10,7 @@ const theme = createMuiTheme({
     },
     text: {
       secondary: "#999999",
+      tertiary: "rgba(255,255,255,0.5)",
     },
   },
   typography: {
@@ -20,6 +21,7 @@ const theme = createMuiTheme({
     fontWeightRegular: 400,
     fontWeightMedium: 500,
     fontWeightBold: 700,
+    textTransform: "none",
     header: {
       minHeight: "4.7rem",
       "@media (min-width:960px)": {
@@ -68,6 +70,7 @@ const theme = createMuiTheme({
       fontWeight: 700,
       fontSize: "3.6rem",
       overflowWrap: "break-word",
+      textTransform: "none",
       "@media (min-width:960px)": {
         fontSize: "8rem",
       },
@@ -77,16 +80,16 @@ const theme = createMuiTheme({
     },
     h2: {
       fontFamily: "Platform,Helvetica,sans-serif",
-      textTransform: "capitalize",
       fontWeight: 700,
       fontSize: "3.6rem",
+      textTransform: "none",
       "@media (min-width:960px)": {
         fontSize: "5.6rem",
       },
     },
     h3: {
       fontFamily: "Platform,Helvetica,sans-serif",
-      textTransform: "capitalize",
+      textTransform: "none",
       fontSize: "3.2rem",
     },
 
