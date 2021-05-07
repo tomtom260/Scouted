@@ -1,5 +1,7 @@
 import React from "react"
 import Grid from "@material-ui/core/Grid"
+import Hidden from "@material-ui/core/Hidden"
+import Box from "@material-ui/core/Box"
 import Typography from "@material-ui/core/Typography"
 import { makeStyles } from "@material-ui/core/styles"
 import perry from "../../assets/Perry-Roger.jpg"
@@ -8,6 +10,7 @@ import danielle from "../../assets/Danielle-Green.jpg"
 import greenCheck from "../../assets/checkgreen.svg"
 import grayCheck from "../../assets/checkgray.svg"
 import yellowCheck from "../../assets/checkyellow.svg"
+import play from "../../assets/play-button-5515fbb3.svg"
 
 const useStyles = makeStyles(theme => ({
   sectionContainer: {
@@ -21,6 +24,11 @@ const useStyles = makeStyles(theme => ({
   resumeImages: {
     "& > div:not(:last-child)": {
       marginBottom: "7.6rem",
+    },
+    [theme.breakpoints.down("sm")]: {
+      "& > div:last-child": {
+        marginBottom: "7.6rem",
+      },
     },
   },
   resumeText: {
@@ -38,7 +46,24 @@ const useStyles = makeStyles(theme => ({
       maxWidth: "44.8rem",
     },
   },
+  resumeContainer: {
+    "@media(max-width:960px)": {
+      flexDirection: "column",
+      alignItems: "flex-start",
+    },
+  },
+  videoPlay: {
+    width: "4.8rem",
+    height: "4.8rem",
+    borderRadius: "50%",
+    backgroundColor: "",
+  },
 }))
+
+function VideoPlay() {
+  const classes = useStyles()
+  return <Box className={classes.videoPlay} />
+}
 
 function Resume() {
   const classes = useStyles()
@@ -71,9 +96,26 @@ function Resume() {
         item
         direction="column"
       >
-        <Grid item container justify="flex-start">
+        <Grid
+          item
+          className={classes.resumeContainer}
+          container
+          justify="flex-start"
+        >
           <Grid item>
-            <img src={sam} alt="sam-bennett" />
+            <Box style={{ position: "relative" }}>
+              <img src={sam} alt="sam-bennett" />
+              <img
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%,-50%)",
+                }}
+                src={play}
+                alt="play-button"
+              />
+            </Box>
           </Grid>
           <Grid
             className={classes.resumeText}
@@ -106,77 +148,105 @@ function Resume() {
         </Grid>
         <Grid item container justify="flex-end">
           <Grid item>
-            <img src={danielle} alt="danielle green" />
+            <Box style={{ position: "relative" }}>
+              <img src={danielle} alt="danielle green" />
+              <img
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%,-50%)",
+                }}
+                src={play}
+                alt="play-button"
+              />
+            </Box>
           </Grid>
-          <Grid
-            className={classes.resumeText}
-            classes={{ container: classes.resumeTextContainer }}
-            item
-            container
-            direction="column"
-          >
-            <Grid item>
-              <Typography variant="h3">Danielle Green</Typography>
+          <Hidden smDown>
+            <Grid
+              className={classes.resumeText}
+              classes={{ container: classes.resumeTextContainer }}
+              item
+              container
+              direction="column"
+            >
+              <Grid item>
+                <Typography variant="h3">Danielle Green</Typography>
+              </Grid>
+              <Grid item container spacing={1}>
+                <Grid item>
+                  <img src={greenCheck} alt="green-check" />
+                </Grid>
+                <Grid item>
+                  <img src={greenCheck} alt="green-check" />
+                </Grid>
+                <Grid item>
+                  <img
+                    style={{
+                      height: "16px",
+                      width: "16px",
+                      transform: "scale3d(1.3,1.3,1.3)",
+                    }}
+                    src={yellowCheck}
+                    alt="yellow-check"
+                  />
+                </Grid>
+                <Grid item>
+                  <img src={grayCheck} alt="gray-check" />
+                </Grid>
+              </Grid>
+              <Grid style={{ textAlign: "left" }}>
+                <Typography variant="body2">Unique match</Typography>
+              </Grid>
             </Grid>
-            <Grid item container spacing={1}>
-              <Grid item>
-                <img src={greenCheck} alt="green-check" />
-              </Grid>
-              <Grid item>
-                <img src={greenCheck} alt="green-check" />
-              </Grid>
-              <Grid item>
-                <img
-                  style={{
-                    height: "16px",
-                    width: "16px",
-                    transform: "scale3d(1.3,1.3,1.3)",
-                  }}
-                  src={yellowCheck}
-                  alt="yellow-check"
-                />
-              </Grid>
-              <Grid item>
-                <img src={grayCheck} alt="gray-check" />
-              </Grid>
-            </Grid>
-            <Grid style={{ textAlign: "left" }}>
-              <Typography variant="body2">Unique match</Typography>
-            </Grid>
-          </Grid>
+          </Hidden>
         </Grid>
         <Grid item container justify="center">
           <Grid item>
-            <img src={perry} alt="perry-rogers" />
+            <Box style={{ position: "relative" }}>
+              <img src={perry} alt="perry-rogers" />
+              <img
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%,-50%)",
+                }}
+                src={play}
+                alt="play-button"
+              />
+            </Box>
           </Grid>
-          <Grid
-            className={classes.resumeText}
-            classes={{ container: classes.resumeTextContainer }}
-            item
-            container
-            direction="column"
-          >
-            <Grid item>
-              <Typography variant="h3">Perry Rogers</Typography>
+          <Hidden smDown>
+            <Grid
+              className={classes.resumeText}
+              classes={{ container: classes.resumeTextContainer }}
+              item
+              container
+              direction="column"
+            >
+              <Grid item>
+                <Typography variant="h3">Perry Rogers</Typography>
+              </Grid>
+              <Grid item container spacing={1}>
+                <Grid item>
+                  <img src={greenCheck} alt="green-check" />
+                </Grid>
+                <Grid item>
+                  <img src={greenCheck} alt="green-check" />
+                </Grid>
+                <Grid item>
+                  <img src={greenCheck} alt="green-check" />
+                </Grid>
+                <Grid item>
+                  <img src={grayCheck} alt="gray-check" />
+                </Grid>
+              </Grid>
+              <Grid style={{ textAlign: "left" }}>
+                <Typography variant="body2">Great match</Typography>
+              </Grid>
             </Grid>
-            <Grid item container spacing={1}>
-              <Grid item>
-                <img src={greenCheck} alt="green-check" />
-              </Grid>
-              <Grid item>
-                <img src={greenCheck} alt="green-check" />
-              </Grid>
-              <Grid item>
-                <img src={greenCheck} alt="green-check" />
-              </Grid>
-              <Grid item>
-                <img src={grayCheck} alt="gray-check" />
-              </Grid>
-            </Grid>
-            <Grid style={{ textAlign: "left" }}>
-              <Typography variant="body2">Great match</Typography>
-            </Grid>
-          </Grid>
+          </Hidden>
         </Grid>
       </Grid>
     </Grid>

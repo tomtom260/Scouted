@@ -11,7 +11,7 @@ import Footer from "./components/Footer/Footer"
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      {/* <CssBaseline /> */}
+      <CssBaseline />
       <BrowserRouter>
         <Header scrolled={true} />
         <Switch>
