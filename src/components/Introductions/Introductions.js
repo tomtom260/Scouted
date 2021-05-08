@@ -1,9 +1,10 @@
 import React from "react"
 import Grid from "@material-ui/core/Grid"
+import Button from "@material-ui/core/Button"
 import { makeStyles } from "@material-ui/core/styles"
 import { Hidden, Typography } from "@material-ui/core"
 import Dash from "./Dash"
-import Button from "../Button/Button"
+// import Button from "../Button/Button"
 import penguin from "../../assets/penguein-purple-dark.svg"
 
 const useStyles = makeStyles(theme => ({
@@ -18,6 +19,7 @@ const useStyles = makeStyles(theme => ({
     borderWidth: "2px",
     height: "5.2rem",
     width: "12.2rem",
+    textTransform: "none",
   },
 }))
 
@@ -31,7 +33,7 @@ function Introductions({ children: items }) {
       spacing={3}
       align="flex-start"
     >
-      <Grid item>
+      <Grid item style={{ padding: "0 1.2rem 6.4rem 1.2rem" }}>
         <Typography variant="body1">
           <strong>
             Helping super-smart generalists land coveted business opportunities.
@@ -56,8 +58,13 @@ function Introductions({ children: items }) {
       </Grid>
       <Grid container justify="space-between" item>
         <Grid style={{ display: "flex", alignItems: "center" }}>
-          <Button size="large" className={classes.button} variant="outlined">
-            sign up
+          <Button
+            color="secondary"
+            size="large"
+            className={classes.button}
+            variant="contained"
+          >
+            Sign up
           </Button>
         </Grid>
         <Hidden smDown>

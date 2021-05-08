@@ -8,7 +8,12 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up("md")]: {
       display: "block",
     },
+    padding: "0 2.4rem",
+    height: "3.8rem",
+    boxSizing: "content-box",
+    width: "7.8rem",
     display: "none",
+    fontSize: "1.3rem",
   },
   text: {
     "&:hover": {
@@ -19,7 +24,6 @@ const useStyles = makeStyles(theme => ({
 
 function Button(props) {
   const classes = useStyles()
-  console.log(props)
   return (
     <ButtonMui
       classes={{ text: classes.text }}

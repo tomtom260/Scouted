@@ -16,8 +16,9 @@ const useStyles = makeStyles(theme => ({
   footer: {
     ...theme.typography.header,
     "& > div:not(:last-child)": {
-      marginRight: "9rem",
+      // marginRight: "9rem",
     },
+
     [theme.breakpoints.down("sm")]: {
       flexDirection: "column",
       alignItems: "center",
@@ -32,6 +33,17 @@ const useStyles = makeStyles(theme => ({
     ...theme.typography.footerColumn,
     "& > div:not(:last-child)": {
       marginBottom: "1.6rem",
+    },
+    "& h3": {
+      [theme.breakpoints.up("md")]: {
+        width: "min-content",
+        whiteSpace: "break-spaces",
+      },
+    },
+  },
+  scoutedText: {
+    [theme.breakpoints.up("md")]: {
+      width: "23rem",
     },
   },
   footerContainer: {
@@ -69,11 +81,7 @@ function Footer() {
           item
         >
           <Grid item>
-            <Typography variant="h3">
-              Get
-              <br />
-              Started
-            </Typography>
+            <Typography variant="h3">Get Started</Typography>
           </Grid>
           <Grid item>
             <Typography variant="body1">sign up</Typography>
@@ -92,11 +100,7 @@ function Footer() {
           item
         >
           <Grid item>
-            <Typography variant="h3">
-              Learn
-              <br />
-              More
-            </Typography>
+            <Typography variant="h3">Learn More</Typography>
           </Grid>
           <Grid item>
             <Typography variant="body1">About Us</Typography>
@@ -130,9 +134,9 @@ function Footer() {
           container
           item
         >
-          <Grid item>
+          <Grid className={classes.scoutedText} item>
             <Typography variant="body1">
-              Scouted, a Recruiter.com <br /> Company
+              Scouted, a Recruiter.com Company
             </Typography>
           </Grid>
         </Grid>

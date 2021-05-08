@@ -9,6 +9,7 @@ const theme = createMuiTheme({
       main: "#6754c8",
     },
     text: {
+      primary: "#363636",
       secondary: "#999999",
       tertiary: "rgba(255,255,255,0.5)",
     },
@@ -30,7 +31,7 @@ const theme = createMuiTheme({
       },
       maxWidth: "114rem",
       margin: "0 auto",
-      padding: "0 2.4rem",
+      padding: "0 1.5rem",
     },
     footerColumn: {
       width: "max-content",
@@ -58,9 +59,9 @@ const theme = createMuiTheme({
       },
     },
     button: {
-      textTransform: "capitalize",
-      borderRadius: "2.5rem",
       letterSpacing: "1px",
+      textTransform: "none",
+      borderRadius: "2.5rem",
       padding: "0.9rem 2rem",
     },
     grid: {

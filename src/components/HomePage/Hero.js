@@ -7,13 +7,18 @@ const useStyles = makeStyles(theme => ({
   sectionContainer: {
     ...theme.typography.header,
     maxWidth: "114rem",
-    padding: "8.6rem 1.5rem 7.6rem 1.5rem",
-  },
-  gridSpacing: {
-    ...theme.typography.gridSpacing,
+    padding: "9.5rem 1.5rem 12rem 1.5rem",
+    "& > div": {
+      padding: "3rem 0 !important",
+    },
   },
   CTA: {
     ...theme.typography.button,
+    width: "15rem",
+    height: "5.4rem",
+    fontSize: "16px",
+    fontWeight: 700,
+    // boxSizing:"content-box",
   },
 }))
 
@@ -21,13 +26,11 @@ function Hero() {
   const classes = useStyles()
   return (
     <Grid
-      spacing={5}
       item
       container
       direction="column"
       justify="flex-end"
       xs={12}
-      classes={{ "spacing-xs-5": classes.gridSpacing }}
       className={classes.sectionContainer}
     >
       <Grid item>
@@ -37,7 +40,7 @@ function Hero() {
           Get scouted.
         </Typography>
       </Grid>
-      <Grid item xs={10} md={8} lg={6}>
+      <Grid item style={{ maxWidth: "52.8rem" }}>
         <Typography variant="body1">
           We match aspiring candidates with inspiring companies. Get hired for
           your abilities and potential, not just your resume.
@@ -45,7 +48,7 @@ function Hero() {
       </Grid>
       <Grid item>
         <Button className={classes.CTA} size="large">
-          Get Started
+          Get started
         </Button>
       </Grid>
     </Grid>

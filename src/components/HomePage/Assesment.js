@@ -6,13 +6,13 @@ const useStyles = makeStyles(theme => ({
   sectionContainer: {
     ...theme.typography.header,
     maxWidth: "114rem",
-    padding: "8.6rem 1.5rem 7.6rem 1.5rem",
+    padding: "10.8rem 1.5rem 8.4rem 1.5rem",
+    "& > div": {
+      padding: "1rem 0",
+    },
   },
-  gridSpacing: {
-    ...theme.typography.gridSpacing,
-  },
-  CTA: {
-    ...theme.typography.button,
+  highTech: {
+    padding: "10rem 0 0 0 !important",
   },
 }))
 
@@ -23,7 +23,7 @@ function Assesment() {
       className={classes.sectionContainer}
       container
       direction="column"
-      spacing={3}
+      // spacing={3}
     >
       <Grid item>
         <Typography variant="h1">
@@ -104,8 +104,25 @@ function Assesment() {
           </svg>
         </Grid>
       </Grid>
-      <Grid item>
+      <Grid item style={{ paddingTop: 0 }}>
         <Typography variant="body1">Okay match</Typography>
+      </Grid>
+      <Grid
+        className={classes.highTech}
+        container
+        direction="column"
+        spacing={3}
+      >
+        <Grid item>
+          <Typography variant="h2">High Tech,Human Touch</Typography>
+        </Grid>
+        <Grid item xs={10} md={8} lg={6}>
+          <Typography variant="body1">
+            Using our ever-learning AI technology and the expertise of our
+            talent team, Scouted helps early to mid-career candidates land the
+            right job. The more we get to know you, the smarter we get
+          </Typography>
+        </Grid>
       </Grid>
     </Grid>
   )

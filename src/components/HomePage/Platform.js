@@ -19,9 +19,8 @@ const useStyles = makeStyles(theme => ({
     // ...theme.typography.sectionContainer,
     ...theme.typography.header,
     maxWidth: "114rem",
-    padding: "8.6rem 1.5rem 7.6rem 1.5rem",
+    padding: "9.6rem 1.5rem 8.8rem 1.5rem",
     alignItems: "flex-end",
-    "& > div:first-child": {},
   },
   scoutsContainer: {
     [theme.breakpoints.down("xs")]: {
@@ -162,7 +161,7 @@ function Platform() {
         wrap="nowrap"
         justify="space-between"
       >
-        <Grid direction="column" item container xs={12} sm={8}>
+        <Grid spacing={3} direction="column" item container xs={12} sm={6}>
           <Grid item>
             <Typography variant="h2">
               Scouted is the job matching platform that works for you
@@ -177,7 +176,13 @@ function Platform() {
             </Typography>
           </Grid>
         </Grid>
-        <Grid item>
+        <Grid
+          style={{ width: "min-content" }}
+          container
+          align="center"
+          justify="flex-end"
+          item
+        >
           <Hidden smUp>
             <img
               style={{ position: "relative", left: "-7rem" }}

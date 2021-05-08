@@ -46,7 +46,7 @@ function Home() {
       </Grid> */}
       <Hero />
       <Assesment />
-      <HighTech />
+      {/* <HighTech /> */}
       <Platform />
       <Resume />
       <Testimonies />

@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
   sectionContainer: {
     ...theme.typography.header,
     maxWidth: "114rem",
-    padding: "8.6rem 1.5rem 7.6rem 1.5rem",
+    padding: "14.9rem 1.5rem 8rem 1.5rem",
     [theme.breakpoints.down("sm")]: {
       flexDirection: "column-reverse",
     },
@@ -65,6 +65,7 @@ function Resume() {
         item
         container
         direction="column"
+        spacing={3}
       >
         <Grid item>
           <Typography variant="h2">You are more than your resume</Typography>

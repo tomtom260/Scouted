@@ -13,14 +13,20 @@ const useStyles = makeStyles(theme => {
   return {
     header: {
       ...theme.typography.header,
-      // maxWidth: "114rem",
+      maxWidth: "114rem",
+      [theme.breakpoints.down("sm")]: {
+        height: "4.7rem",
+        "& img": {
+          height: "1.6rem",
+        },
+      },
     },
     activeStyle: {
       color: `${theme.palette.secondary.main}`,
     },
     toolbar: {
       justifyContent: "space-between",
-      textAlign: "center",
+      textAlign: "flex-end",
       padding: 0,
       minHeight: 0,
     },
@@ -57,11 +63,12 @@ function Header({ scrolled }) {
             className={classes.header}
             wrap="nowrap"
           >
-            <div className={classes.logoContainer}>
+            <div>
               <img src={logo} alt="" />
             </div>
             <nav className={classes.navigation}>
               <Button
+                style={{ letterSpacing: 0 }}
                 variant="text"
                 to="/"
                 exact
@@ -72,6 +79,7 @@ function Header({ scrolled }) {
                 Candidates
               </Button>
               <Button
+                style={{ letterSpacing: 0 }}
                 variant="text"
                 to="/companies"
                 color="#000"
@@ -92,7 +100,7 @@ function Header({ scrolled }) {
                     getStarted
                     classname={classes.getStarted}
                   >
-                    get started
+                    Get started
                   </Button>
                 </>
               ) : (

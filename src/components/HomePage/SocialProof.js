@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme => ({
     },
   },
   socialText: {
-    width: "80%",
+    width: "83%",
     [theme.breakpoints.down("md")]: {
       width: "70%",
       margin: "0 auto",
@@ -39,7 +39,7 @@ const useStyles = makeStyles(theme => ({
   socialContainer: {
     backgroundColor: "#363636",
     color: "#ffffff",
-    padding: "9.4rem 0 6rem 0",
+    padding: "14rem 0 7.2rem 0",
   },
 }))
 
