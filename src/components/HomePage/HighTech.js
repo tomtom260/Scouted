@@ -5,7 +5,9 @@ import { makeStyles } from "@material-ui/core/styles"
 
 const useStyles = makeStyles(theme => ({
   sectionContainer: {
-    ...theme.typography.sectionContainer,
+    ...theme.typography.header,
+    maxWidth: "114rem",
+    padding: "8.6rem 1.5rem 7.6rem 1.5rem",
   },
   gridSpacing: {
     ...theme.typography.gridSpacing,
@@ -25,7 +27,7 @@ function HighTech() {
       spacing={3}
     >
       <Grid item>
-        <Typography variant="h2">high text,human touch</Typography>
+        <Typography variant="h2">High Tech,Human Touch</Typography>
       </Grid>
       <Grid item xs={10} md={8} lg={6}>
         <Typography variant="body1">

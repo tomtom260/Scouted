@@ -52,18 +52,7 @@ const useStyles = makeStyles(theme => ({
       alignItems: "flex-start",
     },
   },
-  videoPlay: {
-    width: "4.8rem",
-    height: "4.8rem",
-    borderRadius: "50%",
-    backgroundColor: "",
-  },
 }))
-
-function VideoPlay() {
-  const classes = useStyles()
-  return <Box className={classes.videoPlay} />
-}
 
 function Resume() {
   const classes = useStyles()

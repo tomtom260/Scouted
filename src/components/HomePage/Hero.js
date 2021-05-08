@@ -5,7 +5,9 @@ import Button from "../Button/Button"
 
 const useStyles = makeStyles(theme => ({
   sectionContainer: {
-    ...theme.typography.sectionContainer,
+    ...theme.typography.header,
+    maxWidth: "114rem",
+    padding: "8.6rem 1.5rem 7.6rem 1.5rem",
   },
   gridSpacing: {
     ...theme.typography.gridSpacing,
@@ -30,9 +32,9 @@ function Hero() {
     >
       <Grid item>
         <Typography variant="h1">
-          dont get hired.
+          Dont get hired.
           <br />
-          get scouted.
+          Get scouted.
         </Typography>
       </Grid>
       <Grid item xs={10} md={8} lg={6}>

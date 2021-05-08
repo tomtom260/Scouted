@@ -24,7 +24,7 @@ function Home() {
   return (
     <>
       <Message />
-      <Grid direction="row" container>
+      {/* <Grid direction="row" container>
         <Grid xs={12} md={10} lg={10} xl={6} item container direction="column">
           <Grid className={classes.grid} item>
             <Hero />
@@ -39,11 +39,15 @@ function Home() {
             <Grid item className={classes.grid}>
               <Platform />
             </Grid>
-            {/* <Grid item className={classes.grid}> */}
-            {/* </Grid> */}
+            <Grid item className={classes.grid}>
+            </Grid>
           </div>
         </Grid>
-      </Grid>
+      </Grid> */}
+      <Hero />
+      <Assesment />
+      <HighTech />
+      <Platform />
       <Resume />
       <Testimonies />
       <Introductions />
