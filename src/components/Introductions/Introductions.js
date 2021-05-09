@@ -1,11 +1,11 @@
-import React from "react"
+import React, { useEffect } from "react"
 import Grid from "@material-ui/core/Grid"
 import Button from "@material-ui/core/Button"
 import { makeStyles } from "@material-ui/core/styles"
 import { Hidden, Typography } from "@material-ui/core"
 import Dash from "./Dash"
-// import Button from "../Button/Button"
 import penguin from "../../assets/penguein-purple-dark.svg"
+import { motion, useViewportScroll, useTransform } from "framer-motion"
 
 const useStyles = makeStyles(theme => ({
   sectionContainer: {
@@ -13,6 +13,7 @@ const useStyles = makeStyles(theme => ({
     maxWidth: "114rem",
     padding: "8.6rem 0 7.6rem 0",
     boxSizing: "content-box",
+    color: "#FFFFFF",
   },
   button: {
     ...theme.typography.button,
@@ -20,11 +21,21 @@ const useStyles = makeStyles(theme => ({
     height: "5.2rem",
     width: "12.2rem",
     textTransform: "none",
+    "&:hover": {
+      color: "#000000",
+    },
   },
 }))
 
-function Introductions({ children: items }) {
+function Introductions({ setBgColor }) {
   const classes = useStyles()
+  const { scrollY } = useViewportScroll()
+  const bgColor = useTransform(scrollY, [3800, 4000], ["#FC6D71", "#6754C8"])
+
+  useEffect(() => {
+    bgColor.onChange(v => setBgColor(v))
+  }, [setBgColor, bgColor, scrollY])
+
   return (
     <Grid
       className={classes.sectionContainer}
@@ -34,7 +45,7 @@ function Introductions({ children: items }) {
       align="flex-start"
     >
       <Grid item style={{ padding: "0 1.2rem 6.4rem 1.2rem" }}>
-        <Typography variant="body1">
+        <Typography style={{ color: "#F3F3F3" }} variant="body1">
           <strong>
             Helping super-smart generalists land coveted business opportunities.
           </strong>
@@ -43,7 +54,7 @@ function Introductions({ children: items }) {
       <Grid item>
         <Typography variant="h2">
           Being <Dash words={["creative", "analytical", "personable"]} />
-          <span style={{ whiteSpace: "nowrap" }}>is my biggest strength</span>.
+          <span style={{ whiteSpace: "nowrap" }}> is my biggest strength</span>.
         </Typography>
         <Typography variant="h2">
           I am looking to{" "}
@@ -59,10 +70,17 @@ function Introductions({ children: items }) {
       <Grid container justify="space-between" item>
         <Grid style={{ display: "flex", alignItems: "center" }}>
           <Button
-            color="secondary"
+            color="primary"
             size="large"
             className={classes.button}
-            variant="contained"
+            variant="outlined"
+            component={motion.div}
+            whileHover={{
+              backgroundColor: "#FFFFFF",
+            }}
+            transition={{
+              duration: 0.15,
+            }}
           >
             Sign up
           </Button>

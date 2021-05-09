@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import Grid from "@material-ui/core/Grid"
 import Hidden from "@material-ui/core/Hidden"
 import Box from "@material-ui/core/Box"
@@ -11,6 +11,8 @@ import greenCheck from "../../assets/checkgreen.svg"
 import grayCheck from "../../assets/checkgray.svg"
 import yellowCheck from "../../assets/checkyellow.svg"
 import play from "../../assets/play-button-5515fbb3.svg"
+import { useTransform, useViewportScroll } from "framer-motion"
+import { useInView } from "react-intersection-observer"
 
 const useStyles = makeStyles(theme => ({
   sectionContainer: {
@@ -54,10 +56,28 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-function Resume() {
+function Resume({ setBgColor }) {
   const classes = useStyles()
+  const { scrollY } = useViewportScroll()
+  const [ref, inView] = useInView()
+  const bgColor = useTransform(scrollY, [1807, 1900], ["#FFFFFF", "#F3F3F3"])
+
+  useEffect(() => {
+    bgColor.onChange(v => setBgColor(v))
+    // scrollY.onChange(v => console.log(v))
+  }, [bgColor, scrollY, setBgColor])
+
+  useEffect(() => {
+    // console.log(inView)
+  }, [inView])
+
   return (
-    <Grid className={classes.sectionContainer} container align="center">
+    <Grid
+      ref={ref}
+      className={classes.sectionContainer}
+      container
+      align="center"
+    >
       <Grid
         style={{ textAlign: "left", justifyContent: "flex-end" }}
         xs={12}

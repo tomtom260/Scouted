@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import Grid from "@material-ui/core/Grid"
 import Typography from "@material-ui/core/Typography"
 import { makeStyles } from "@material-ui/core/styles"
@@ -13,6 +13,8 @@ import michelle from "../../assets/michelle-manket.jpg"
 import nicole from "../../assets/nicole-sanfilippo.jpg"
 import bridget from "../../assets/bridget-murdoch.jpg"
 import sarah from "../../assets/sarah-schultz.jpg"
+import { useTransform, useViewportScroll } from "framer-motion"
+import { useInView } from "react-intersection-observer"
 
 const useStyles = makeStyles(theme => ({
   sectionContainer: {
@@ -133,10 +135,28 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-function Platform() {
+function Platform({ setBgColor }) {
   const classes = useStyles()
+  const { scrollY } = useViewportScroll()
+  const [ref, inView] = useInView()
+  const bgColor = useTransform(scrollY, [1028, 1300], ["#6754C8", "#FFFFFF"])
+
+  useEffect(() => {
+    bgColor.onChange(v => setBgColor(v))
+    // setBgColor()
+  }, [setBgColor, bgColor])
+
+  // useEffect(() => {
+  //   console.log(inView)
+  // }, [inView])
+
   return (
-    <Grid container direction="column" className={classes.sectionContainer}>
+    <Grid
+      ref={ref}
+      container
+      direction="column"
+      className={classes.sectionContainer}
+    >
       <Grid className={classes.imagesContainer} item container>
         <img className={classes.cynthia} src={cynthia} alt="cynthia-madu" />
         <img

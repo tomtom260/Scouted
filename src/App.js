@@ -7,6 +7,7 @@ import Home from "./components/HomePage/Home"
 import Header from "./components/Header/Header"
 import { BrowserRouter, Link, Route, Switch } from "react-router-dom"
 import Footer from "./components/Footer/Footer"
+import SocialProof from "./components/Footer/SocialProof"
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           />
           <Route component={() => <h1>404</h1>} />
         </Switch>
+        <SocialProof />
         <Footer />
       </BrowserRouter>
     </ThemeProvider>

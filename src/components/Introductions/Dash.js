@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react"
 import { makeStyles } from "@material-ui/core/styles"
-import { Typography } from "@material-ui/core"
 
 const useStyles = makeStyles(theme => {
   return {
@@ -12,7 +11,6 @@ const useStyles = makeStyles(theme => {
         words.forEach(word => {
           if (word.length > max) max = word.length
         })
-        console.log(max)
         return `${max * 1.86}rem`
       },
       [theme.breakpoints.up("md")]: {
@@ -21,12 +19,9 @@ const useStyles = makeStyles(theme => {
           words.forEach(word => {
             if (word.length > max) max = word.length
           })
-          console.log(max)
           return `${max * 2.7}rem`
         },
-        // width: `${max * 2.89}rem`,
       },
-      // backgroundColor: "green",
       textAlign: "center",
       display: "inline-block",
     },

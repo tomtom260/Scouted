@@ -9,6 +9,7 @@ const useStyles = makeStyles(theme => ({
     ...theme.typography.header,
     maxWidth: "121.4rem",
     padding: "8.6rem 1.5rem 7.6rem 1.5rem",
+    color: "#FFFFFF",
   },
   radio: {
     backgroundColor: "#FFFFFF",
@@ -27,7 +28,7 @@ const useStyles = makeStyles(theme => ({
   },
   avatarText: {
     textAlign: "left",
-    // justifyContent: "space-evenly",
+    color: "#363636",
   },
   gridSpacing: {
     "& > .MuiGrid-item": {
@@ -36,7 +37,10 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-function Carousel({ children: items }) {
+export default React.forwardRef(function Carousel(
+  { children: items, ...rest },
+  ref
+) {
   const classes = useStyles()
   const [item, setItem] = useState(items[0])
   const interval = useRef()
@@ -58,6 +62,8 @@ function Carousel({ children: items }) {
 
   return (
     <Grid
+      {...rest}
+      ref={ref}
       className={classes.sectionContainer}
       container
       direction="column"
@@ -122,6 +128,4 @@ function Carousel({ children: items }) {
       </Grid>
     </Grid>
   )
-}
-
-export default Carousel
+})

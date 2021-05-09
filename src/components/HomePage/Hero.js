@@ -7,9 +7,12 @@ const useStyles = makeStyles(theme => ({
   sectionContainer: {
     ...theme.typography.header,
     maxWidth: "114rem",
-    padding: "9.5rem 1.5rem 12rem 1.5rem",
+    padding: "6.5rem 1.5rem 9rem 1.5rem",
     "& > div": {
       padding: "3rem 0 !important",
+    },
+    [theme.breakpoints.down("sm")]: {
+      padding: "1.5rem 1.5rem 9rem 1.5rem",
     },
   },
   CTA: {

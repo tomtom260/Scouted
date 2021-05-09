@@ -1,6 +1,7 @@
+import React, { useEffect } from "react"
 import { Grid, Typography } from "@material-ui/core"
-import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
+import { useViewportScroll, useTransform } from "framer-motion"
 
 const useStyles = makeStyles(theme => ({
   sectionContainer: {
@@ -10,14 +11,25 @@ const useStyles = makeStyles(theme => ({
     "& > div": {
       padding: "1rem 0",
     },
+    color: "#FFFFFF",
+    [theme.breakpoints.down("md")]: {
+      padding: "8.8rem 1.5rem 9.8rem 1.5rem",
+    },
   },
   highTech: {
     padding: "10rem 0 0 0 !important",
   },
 }))
 
-function Assesment() {
+function Assesment({ setBgColor }) {
   const classes = useStyles()
+  const { scrollY } = useViewportScroll()
+  const bgColor = useTransform(scrollY, [173, 640], ["#FFFFFF", "#6754C8"])
+
+  useEffect(() => {
+    bgColor.onChange(v => setBgColor(v))
+  }, [bgColor, setBgColor])
+
   return (
     <Grid
       className={classes.sectionContainer}
@@ -26,7 +38,7 @@ function Assesment() {
       // spacing={3}
     >
       <Grid item>
-        <Typography variant="h1">
+        <Typography style={{ color: "#E4D4DE" }} variant="h1">
           You +<br />
           Operations associate=
         </Typography>

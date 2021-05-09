@@ -1,58 +1,25 @@
-import React from "react"
-import Grid from "@material-ui/core/Grid"
-import { makeStyles } from "@material-ui/core/styles"
+import React, { useState } from "react"
 import Hero from "./Hero"
 import Assesment from "./Assesment"
-import HighTech from "./HighTech"
 import Platform from "./Platform"
 import Message from "./Message"
-import SocialProof from "./SocialProof"
 import Testimonies from "./Testimonies"
 import Introductions from "../Introductions/Introductions"
 import Resume from "./Resume"
-
-const useStyles = makeStyles(theme => ({
-  grid: {
-    ...theme.typography.grid,
-    // backgroundColor: "red",
-    // padding: "100px",
-  },
-}))
+import { Box } from "@material-ui/core"
 
 function Home() {
-  const classes = useStyles()
+  const [bgColor, setBgColor] = useState()
   return (
-    <>
+    <Box style={{ backgroundColor: bgColor }} p={0} m={0}>
       <Message />
-      {/* <Grid direction="row" container>
-        <Grid xs={12} md={10} lg={10} xl={6} item container direction="column">
-          <Grid className={classes.grid} item>
-            <Hero />
-          </Grid>
-          <div className={classes.grid}>
-            <Grid item className={classes.grid}>
-              <Assesment />
-            </Grid>
-            <Grid item className={classes.grid}>
-              <HighTech />
-            </Grid>
-            <Grid item className={classes.grid}>
-              <Platform />
-            </Grid>
-            <Grid item className={classes.grid}>
-            </Grid>
-          </div>
-        </Grid>
-      </Grid> */}
       <Hero />
-      <Assesment />
-      {/* <HighTech /> */}
-      <Platform />
-      <Resume />
-      <Testimonies />
-      <Introductions />
-      <SocialProof />
-    </>
+      <Assesment setBgColor={setBgColor} />
+      <Platform setBgColor={setBgColor} />
+      <Resume setBgColor={setBgColor} />
+      <Testimonies setBgColor={setBgColor} />
+      <Introductions setBgColor={setBgColor} />
+    </Box>
   )
 }
 

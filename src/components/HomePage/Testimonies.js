@@ -1,11 +1,19 @@
-import React from "react"
+import React, { useEffect } from "react"
 import Carousel from "../Carousel/Carousel"
 import margot from "../../assets/margot-maley.png"
 import carlos from "../../assets/carlos-guzman.png"
 import kimberly from "../../assets/kimberly-son.png"
 import cecilia from "../../assets/cecelia-shao.png"
+import { useViewportScroll, useTransform } from "framer-motion"
 
-function Testimonies() {
+function Testimonies({ setBgColor }) {
+  const { scrollY } = useViewportScroll()
+  const bgColor = useTransform(scrollY, [2950, 3100], ["#F3F3F3", "#FC6D71"])
+
+  useEffect(() => {
+    bgColor.onChange(v => setBgColor(v))
+  }, [setBgColor, bgColor, scrollY])
+
   return (
     <Carousel>
       {[
